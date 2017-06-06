@@ -4,22 +4,18 @@ $(document).ready(function() {
     var letters = $("input#phrase").val().split("")
 
 
-    var newLetters = letters.map(function(letter) {
-      if (letter === "a" || letter === "i" || letter === "e" || letter === "o" || letter === "u") {
-        return "-";
+    for (var letter = 0; letter <= letters.length; letter += 1) {
+      if (letters[letter] === "a" || letters[letter] === "i" || letters[letter] === "e" || letters[letter] === "o" || letters[letter] === "u") {
+         $("#output").append("-");
       } else {
-        return letter;
+        $("#output").append(letters[letter]);
       }
-
+    };
+    $(".sentence").show();
+    $(".sentence").click(function() {
+      $(".sentence").show();
+      $("#output").empty();
 
     });
-
-    newLetters = newLetters.join(" ")
-    alert(newLetters)
-    console.log(newLetters)
-
-
-
-
   });
 });
